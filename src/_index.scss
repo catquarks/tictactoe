@@ -1,5 +1,6 @@
 $dimension: 7;
 $quad-dimension: $dimension + 0em;
+$winning-color: rgb(235, 200, 100);
 
 body {
   margin: 0;
@@ -51,7 +52,7 @@ body {
 
 .end-of-game {
 	h2 {
-		color: rgb(250, 200, 100);
+		color: $winning-color;
 	}
 
 	h3.restart {
@@ -61,7 +62,7 @@ body {
 		padding: 2px;
 		border-radius: 0.5em;
 		cursor: pointer;
-		color: rgb(220, 130, 130);
+		color: rgb(250, 200, 190);
 
 		&:hover {
 			color: rgb(255, 150, 150);
@@ -75,6 +76,8 @@ body {
 
 
 .grid {
+	width: 21em;
+	height: 21em;
 	position: relative;
 	top: 3em;
 	left: 50%;
@@ -98,6 +101,10 @@ body {
 	font-size: 3em;
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.winner {
+	color: $winning-color;
 }
 
 /* first row */

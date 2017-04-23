@@ -12,6 +12,7 @@ class App extends Component {
       gameOver: false,
       draw: false,
       winner: '',
+      winningCombo: {},
       q1: '',
       q2: '',
       q3: '',
@@ -54,25 +55,35 @@ class App extends Component {
   }
 
   isThereAWinner(quad, player){
-    const possibleCombos = this.state.possibleCombos
+    const possibleCombos = [...this.state.possibleCombos]
 
     const newPossibleCombos = possibleCombos.filter( combo => {
-      // add player to every possible winning combo
+      // add player to every possible combo
       if (combo[quad] !== undefined){
         combo[quad] = player
       }
       
-      // check if the values of each winning combo are all the same player
-      // if values are all the same player, there is a winner
+      // check if the values of each possible combo are all the same player
+      // if values are all the same player, that player is the winner
       const valuesString = Object.values(combo).toString()
 
       if (valuesString === "x,x,x") {
-        this.setState({gameOver: true, winner: 'x'})
+
+        this.setState({
+          gameOver: true,
+          winner: 'x',
+          winningCombo: combo
+        })
       } else if (valuesString === "o,o,o") {
-        this.setState({gameOver: true, winner: 'o'})
+
+        this.setState({
+          gameOver: true,
+          winner: 'o',
+          winningCombo: combo
+        })
       }
 
-      // if a possible combo includes both players, remove combo from winning combos
+      // if a possible combo includes both players, remove combo from possible combos
       if (valuesString.includes('x') && valuesString.includes('o')){
         return false
       }
@@ -82,7 +93,7 @@ class App extends Component {
 
     // if all possible combos are null, it's a draw
     if (newPossibleCombos.length === 0){
-      this.setState({draw: true, gameOver: true})
+      this.setState( {draw: true, gameOver: true} )
     }
   }
 
@@ -92,6 +103,7 @@ class App extends Component {
       gameOver: { $set: false},
       draw: { $set: false},
       winner: { $set: ''},
+      winningCombo: { $set: {} },
       q1: { $set: ''},
       q2: { $set: ''},
       q3: { $set: ''},
@@ -140,9 +152,11 @@ class App extends Component {
               currentPlayer={ this.state.currentPlayer }
               quadId={ quadNum }
               player={ this.state[quadNum] }
+              background={ this.state[quadNum].bg }
               key={ quad }
               clicked={ this.state[quadNum] === '' ? false : true }
               gameOver={ this.state.gameOver }
+              winningCombo={ this.state.winningCombo }
              />
            )
           }) }
