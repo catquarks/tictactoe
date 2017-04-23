@@ -122,7 +122,7 @@ class App extends Component {
         <div className="App-header">
           <h1>Tic Tac Toe</h1>
           { !this.state.gameOver ?
-            <h2>It's { this.state.currentPlayer }'s turn!</h2> :
+            <h2><strong>Status:</strong> It's { this.state.currentPlayer }'s turn!</h2> :
             <EndOfGame
               draw={ this.state.draw }
               winner={ this.state.winner }

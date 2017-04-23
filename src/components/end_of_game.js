@@ -7,7 +7,7 @@ export default function EndOfGame(props){
         <h2>{ props.winner } won!</h2> :
         <h2>It's a draw!</h2>        
       }
-      <h3 onClick={ props.restartGame }>Play Again!</h3>
+      <h3 className='restart' onClick={ props.restartGame }>Play Again!</h3>
     </div>
   )
 }

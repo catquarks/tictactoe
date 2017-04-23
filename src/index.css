@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  font-size: 1rem; }
 
 .App {
   margin: auto;
@@ -10,9 +11,14 @@ body {
 .App-header {
   background-color: #222;
   height: auto;
-  padding: 20px;
+  padding: 0.5em;
   color: white;
   text-align: center; }
+  .App-header h1 {
+    font-size: 2.5em; }
+  .App-header h2 strong {
+    font-style: italic;
+    color: #ffaac8; }
 
 .byline {
   font-size: small;
@@ -28,12 +34,17 @@ body {
 .end-of-game h2 {
   color: #fac864; }
 
-.end-of-game h3 {
+.end-of-game h3.restart {
+  margin: auto;
+  width: 8em;
+  background: #444;
+  padding: 2px;
+  border-radius: 0.5em;
   cursor: pointer;
-  color: #c86464; }
-  .end-of-game h3:hover {
+  color: #dc8282; }
+  .end-of-game h3.restart:hover {
     color: #ff9696; }
-  .end-of-game h3:active {
+  .end-of-game h3.restart:active {
     color: white; }
 
 .grid {
