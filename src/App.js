@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import update from 'immutability-helper'
 import Quadrant from './components/quadrant'
 import EndOfGame from './components/end_of_game'
+import Byline from './components/byline'
 
 class App extends Component {
   constructor(props){
@@ -127,7 +128,8 @@ class App extends Component {
               winner={ this.state.winner }
               restartGame={ this.restartGame.bind(this) }
             />
-          }         
+          }  
+          <Byline />
         </div>
         <div className='grid'>
           { [1,2,3,4,5,6,7,8,9].map( quad => {

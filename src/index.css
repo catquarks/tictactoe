@@ -9,10 +9,21 @@ body {
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: auto;
   padding: 20px;
   color: white;
   text-align: center; }
+
+.byline {
+  font-size: small;
+  font-style: italic; }
+  .byline a {
+    color: #0ac8ff;
+    text-decoration: none; }
+    .byline a:hover {
+      color: pink; }
+    .byline a:active {
+      color: red; }
 
 .end-of-game h2 {
   color: #fac864; }
@@ -27,7 +38,7 @@ body {
 
 .grid {
   position: relative;
-  top: 2em;
+  top: 3em;
   left: 50%;
   margin-left: -11em; }
 
