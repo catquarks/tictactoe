@@ -17,7 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "npm-sass ./src/_index.scss > ./src/index.css",
-    "watch-css": "nodemon -e scss -x  \"npm run build-css\""
+    "watch-css": "nodemon -e scss -x  \"npm run build-css\"",
+    "deploy": "npm run build && deploy-site tictactoe/build tictactoe"
   },
   "homepage": "http://comfortcat.xyz/tictactoe"
 }
