@@ -149,10 +149,8 @@ class App extends Component {
             return(
              <Quadrant
               clickQuad={ this.clickQuad.bind(this) }
-              currentPlayer={ this.state.currentPlayer }
               quadId={ quadNum }
               player={ this.state[quadNum] }
-              background={ this.state[quadNum].bg }
               key={ quad }
               clicked={ this.state[quadNum] === '' ? false : true }
               gameOver={ this.state.gameOver }
